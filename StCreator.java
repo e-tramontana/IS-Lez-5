@@ -18,14 +18,14 @@ public class StCreator extends Creator {
     }
 
     /** Restituisce uno studente sospeso, che non può sostenere esami */
-    public static IStudente sospendi(IStudente s) {
+    public IStudente sospendi(IStudente s) {
         Sospeso sosp = new Sospeso(s.getMedia());
         bloccati.put(sosp, s);
         return sosp;
     }
 
     /** Restituisce uno studente che può sostenere esami, se prima era sospeso */
-    public static IStudente ripristina(IStudente s) {
+    public IStudente ripristina(IStudente s) {
         return bloccati.remove(s);
     }
 }
