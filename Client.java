@@ -9,7 +9,7 @@ public class Client {
 
     /** Chiede di creare una istanza di Studente e registra un esame. */
     public void registraUnEsame() {
-        s = creat.getStudente();
+        s = creat.creaStudente();
         s.nuovoEsame("Maths", 8);
     }
 
@@ -34,7 +34,7 @@ public class Client {
         s.getMedia();
     }
 
-    public IStudente getStudente() {
+    public IStudente get() {
         return s;
     }
 }
