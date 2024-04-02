@@ -1,10 +1,15 @@
 /** Avvia alcune operazioni su uno studente */
 public class Client {
     private IStudente s;
+    private Creator creat;
+
+    public Client(Creator c) {
+        creat = c;
+    }
 
     /** Chiede di creare una istanza di Studente e registra un esame. */
     public void registraUnEsame() {
-        s = StCreator.getStudente();
+        s = creat.getStudente();
         s.nuovoEsame("Maths", 8);
     }
 
@@ -17,13 +22,13 @@ public class Client {
         s.getMedia();
 
         System.out.println("* Sospensione carriera *");
-        s = StCreator.sospendi(s);
+        s = creat.sospendi(s);
         System.out.println("prova a registrare un esame");
         s.nuovoEsame("History", 8);
         s.getMedia();
 
         System.out.println("* Ripristino carriera *");
-        s = StCreator.ripristina(s);
+        s = creat.ripristina(s);
         System.out.println("prova a registrare un esame");
         s.nuovoEsame("History", 8);
         s.getMedia();
